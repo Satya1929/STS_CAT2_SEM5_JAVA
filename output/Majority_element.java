@@ -9,16 +9,16 @@ public class Majority_element {
 
         for (int i = 0; i < n; i++) {
             //selected element is v[i]
-            int cnt = 0;
+            int count = 0;
             for (int j = 0; j < n; j++) {
                 // counting the frequency of v[i]
                 if (v[j] == v[i]) {
-                    cnt++;
+                    count++;
                 }
             }
 
             // check if frquency is greater than n/2:
-            if (cnt > (n / 2))
+            if (count > (n / 2))
                 return v[i];
         }
 
@@ -52,6 +52,35 @@ public class Majority_element {
 
     /////////////////////////////////////////////////////////////////////////////moore algo = optimal
 
+    public static int majorityElement_moore(int []v) {
+        //size of the given array:
+        int n = v.length;
+        int count = 0; // count = balacing count 
+        int ele = 0; // Element
+
+        //Step 1 - applying the algorithm:
+        for (int i = 0; i < n; i++) 
+        {
+            if (count == 0) 
+            {
+                count = 1;
+                ele = v[i];
+            } 
+            else if (ele == v[i]) count++;
+            else count--;
+        }
+
+        //Step2 - checking if the stored element is the majority element:
+        int cnt1 = 0;
+        for (int i = 0; i < n; i++) 
+        {
+            if (v[i] == ele) cnt1++;
+        }
+
+        if (cnt1 > (n / 2)) return ele;
+
+        return -1;
+    }
 
 
 
