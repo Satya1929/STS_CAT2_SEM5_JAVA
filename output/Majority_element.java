@@ -52,11 +52,11 @@ public class Majority_element {
 
     /////////////////////////////////////////////////////////////////////////////moore algo = optimal
 
-    public static int majorityElement_moore(int []v) {
+    public static int majorityElement_moore_version1(int []v) {
         //size of the given array:
         int n = v.length;
         int count = 0; // count = balacing count 
-        int ele = 0; // Element
+        int candidatee = 0; // Element
 
         //Step 1 - applying the algorithm:
         for (int i = 0; i < n; i++) 
@@ -64,22 +64,35 @@ public class Majority_element {
             if (count == 0) 
             {
                 count = 1;
-                ele = v[i];
+                candidatee = v[i];
             } 
-            else if (ele == v[i]) count++;
+            else if (candidatee == v[i]) count++;
             else count--;
         }
 
-        //Step2 - checking if the stored element is the majority element:
+        //Step2 - verify if the stored element is the majority element:
         int cnt1 = 0;
         for (int i = 0; i < n; i++) 
         {
-            if (v[i] == ele) cnt1++;
+            if (v[i] == candidatee) cnt1++;
         }
-
-        if (cnt1 > (n / 2)) return ele;
+        if (cnt1 > (n / 2)) return candidatee;
 
         return -1;
+    }
+
+
+    public int majorityElement_moore_version2(int[] nums) { //easier with for each loop + skip verification
+        int count = 0, candidate = 0;
+        for (int num : nums) {
+            if (count == 0) 
+            {
+                candidate = num;
+            }
+            count += (num == candidate) ? 1 : -1;
+        }
+        //skip the verification 
+        return candidate;
     }
 
 
