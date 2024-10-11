@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Leaders_in_array {
     
-    public static ArrayList<Integer>printLeadersBruteForce(int[] arr, int n)
+    public static ArrayList<Integer>printLeaders_BruteForce(int[] arr, int n)
     {
         ArrayList<Integer> ans= new ArrayList<>();
         
@@ -31,7 +31,7 @@ public class Leaders_in_array {
     }
 
 
-    public static ArrayList<Integer> printLeadersoptimal(int[] arr, int n){
+    public static ArrayList<Integer> printLeaders_optimal(int[] arr, int n){
     
         ArrayList<Integer> ans= new ArrayList<>();
         
@@ -73,9 +73,6 @@ public class Leaders_in_array {
     }
 
 }
-
-
-
 
 
 

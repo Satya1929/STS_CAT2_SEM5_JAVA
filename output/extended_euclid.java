@@ -1,7 +1,13 @@
 package output;
 import java.util.*;
 
-public class extended_euclid {
+public class extended_euclid {  
+    struct triplet {
+        int gcd;
+        int x;
+        int y;
+    };
+
     vector<int> gcd(int a, int b) {
         // Use the extended Euclidean function
         triplet result = extendedEuclid(a, b);
@@ -9,12 +15,7 @@ public class extended_euclid {
         // Return gcd, x, and y in a vector
         return {result.gcd, result.x, result.y};
     }
-    
-    struct triplet {
-        int gcd;
-        int x;
-        int y;
-    };
+
     
     triplet extendedEuclid(int a, int b) {
         if (b == 0) {
