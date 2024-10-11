@@ -44,3 +44,36 @@ public class maximum_sum_hour_glass {
         System.out.println("Maximum hourglass sum: " + result);
     }
 }
+
+
+
+
+public static void main(String[] args) { //variable matrix size when row or column numbers are not specified
+    Scanner sc = new Scanner(System.in);
+    List<int[]> matrixList = new ArrayList<>();
+    
+    System.out.println("Enter matrix values row by row (separated by spaces). Press enter on a blank line to finish:");
+
+    while (sc.hasNextLine()) {
+        String line = sc.nextLine().trim();
+        if (line.isEmpty()) {
+            break;  // Stop input if the user provides a blank line
+        }
+        String[] values = line.split("\\s+");
+        int[] row = Arrays.stream(values).mapToInt(Integer::parseInt).toArray();
+        matrixList.add(row);
+    }
+
+    // Convert list to 2D array
+    int[][] matrix = matrixList.toArray(new int[0][0]);
+
+    // Call solve function to find the maximum hourglass sum
+    int result = solve(matrix);
+
+    // Output the result
+    System.out.println(result);
+}
+
+
+
+
