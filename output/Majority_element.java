@@ -54,7 +54,7 @@ public class Majority_element {
 
     public static int majorityElement_moore_version1(int []v) {
         //size of the given array:
-        int n = v.length;
+        int n = v.length; //not lenght()
         int count = 0; // count = balacing count 
         int candidatee = 0; // Element
 
@@ -82,20 +82,38 @@ public class Majority_element {
     }
 
 
+    public int majorityElement_moore_version2(int[] v) // best with for each loop
+    {
+        //algo
+        int candi = 0 ;
+        int count = 0 ;
+        
+        for(int ele : v)
+        {
+            if (count == 0) candi = ele ;
+            if (ele == candi) count++ ;
+            else count-- ;
+        }
+        
+        //verify
+        int anscount = 0 ;
+        for(int ele : v) if(ele==candi) anscount++ ;
+        if (anscount > (v.length/2)) return candi ;
+        else return -1 ;       
+        
+    }
+
+    //or
+
     public int majorityElement_moore_version2(int[] nums) { //easier with for each loop + skip verification
         int count = 0, candidate = 0;
         for (int num : nums) {
-            if (count == 0) 
-            {
-                candidate = num;
-            }
+            if (count == 0) candidate = num;
             count += (num == candidate) ? 1 : -1;
         }
         //skip the verification 
         return candidate;
     }
-
-
 
 
     public static void main(String args[]) {

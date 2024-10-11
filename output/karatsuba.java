@@ -1,11 +1,9 @@
 package output;
 import java.util.*;
+import java.math.*;
 
 
-import java.math.BigInteger;
-
-
-public class Karatsuba {
+public class Karatsuba {//actual
 
 
     // Function to implement Karatsuba multiplication
@@ -78,21 +76,6 @@ public class Karatsuba {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Main function to test Karatsuba multiplication
     public static void main(String[] args) {
         long num1 = 123456789;
@@ -106,6 +89,108 @@ public class Karatsuba {
 
 
 
+
+
+public class Solution {//making school fool
+
+    public static int multiplyBinaryStrings(String x, String y) { // binary string input
+        int num1 = Integer.parseInt(x, 2);  // Convert x to decimal integers
+        int num2 = Integer.parseInt(y, 2);  // Convert y to decimal integers
+        return num1 * num2;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input two strings (binary)
+        String x = sc.nextLine();
+        String y = sc.nextLine();
+
+        // Call the multiply function and print the result
+        System.out.println(multiplyBinaryStrings(x, y));
+        
+        sc.close();
+    }
+}
+
+
+
+// import java.math.*;
+public class Solution {//making school fool
+
+    public static BigInteger multiplyLargeBinaryStrings(String x, String y) {//very large binary strings
+        BigInteger num1 = new BigInteger(x, 2);  // Convert binary string x to BigInteger
+        BigInteger num2 = new BigInteger(y, 2);  // Convert binary string y to BigInteger
+        return num1.multiply(num2);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input two binary strings
+        String x = sc.nextLine();
+        String y = sc.nextLine();
+
+        // Call the multiply function and print the result
+        System.out.println(multiplyLargeBinaryStrings(x, y));
+        
+        sc.close();
+    }
+}
+
+
+
+
+
+
+// import java.math.*;
+// import java.util.*;
+
+public class Fooling {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input binary (int)
+       int bin1 = 1010;
+       int bin2 = 1101;
+
+       BigInteger b1 = new BigInteger(Integer.toString(bin1),2);
+       BigInteger b2 = new BigInteger(Integer.toString(bin2),2);
+
+
+       System.out.println(b1.multiply(b2));
+
+        // Input binary (string)
+       String sbin1 = "1010";
+       String sbin2 = "1101";
+       BigInteger big1 = new BigInteger(sbin1,2);
+       BigInteger big2 = new BigInteger(sbin2,2);
+
+       System.out.println(big1.multiply(big2));
+
+
+
+        // Input decimal (int)
+       long num1 = 10;
+       long num2 = 13;
+       BigInteger bn1 = new BigInteger(Long.toString(num1));
+       BigInteger bn2 = new BigInteger(Long.toString(num2));
+
+       System.out.println(bn1.multiply(bn2));
+
+
+
+        // Input deciaml (string)
+        String sbin11 = "10";
+        String sbin22 = "13";
+        BigInteger big11 = new BigInteger(sbin11);
+        BigInteger big22 = new BigInteger(sbin22);
+ 
+        System.out.println(big11.multiply(big22));
+    }
+    
+}
 
 
 
