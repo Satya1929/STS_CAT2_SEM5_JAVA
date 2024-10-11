@@ -57,7 +57,6 @@ public class Leaders_in_array {
       }
 
 
-
     public static void main(String args[]) 
     {
         // Array Initialization.

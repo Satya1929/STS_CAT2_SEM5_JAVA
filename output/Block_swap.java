@@ -52,6 +52,11 @@ public class Block_swap {//alternative code of bloack swap to rotate array (same
 
 
 
+
+
+
+
+
 public class Block_swap { ////alternative code of bloack swap to rotate array  (brute force)
     //time = O(n+d) = O(n)
     //space = O(d)
@@ -143,3 +148,13 @@ public class Block_swap {//actual algo , time = O(n) , space = O(1)
         System.out.print(arr[i] + " ");
     }
   }
+
+
+
+
+
+
+
+
+
+
