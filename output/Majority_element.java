@@ -26,7 +26,7 @@ public class Majority_element {
     }
 
 
-    public static int majorityElement(int []v) {
+    public static int majorityElement_better(int []v) {
         //size of the given array:
         int n = v.length;
 

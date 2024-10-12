@@ -29,7 +29,7 @@ public class maximum_equilibrium_point {
 
 
 
-    static int findMaxSum_optimal(int []arr, int n) {//O(n)
+    static int findMaxSum_better(int []arr, int n) {//O(n)
         int []preSum = new int[n];  // Array to store leftsum sums (element including)
         int []suffSum = new int[n]; // Array to store suffix sums  (element including)
         int ans = Integer.MIN_VALUE; // To store the maximum equilibrium total_sum, initialized to the smallest value
@@ -65,7 +65,7 @@ public class maximum_equilibrium_point {
 
 
     // Function to find the maximum equilibrium total_sum
-    public static int findMaxEquilibriumSum(int[] arr) {
+    public static int findMaxEquilibriumSum_optimal(int[] arr) {
         int n = arr.length;
         int total_sum = 0;
 

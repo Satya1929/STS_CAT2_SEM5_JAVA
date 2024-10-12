@@ -146,7 +146,8 @@ public class Solution {//making school fool
 // import java.math.*;
 // import java.util.*;
 
-public class Fooling {
+public class Fooling { 
+    //tried and tested (in exams 2024 , even integer multiplication passes all test case , but for safer side for big numbers this code works sexy)
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
