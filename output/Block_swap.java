@@ -29,7 +29,7 @@ public class Block_swap {//alternative code of bloack swap to rotate array (same
     }
 
     public static void main(String args[]) {
-        int n = 7;
+        int n = 7; //array size
         int arr[] = {1, 2, 3, 4, 5, 6, 7};
         int d = 3;
 

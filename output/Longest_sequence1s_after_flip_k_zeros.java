@@ -7,16 +7,15 @@ public class Longest_sequence1s_after_flip_k_zeros { //java solution
         for (int i = 0; i <= arr.length - 1; i++) {
             int zeros = 0;
             for (int j = i; j <= arr.length - 1; j++) {  
+                
                 if (arr[j] == 0) zeros++;
+
                 if (zeros <= k) 
                 {
                     int len = j - i + 1;
                     maxlen = Math.max(maxlen, len);
                 } 
-                else 
-                {
-                    break;  // Zeros exceeded, try next subarray
-                }
+                else if (zeros > k) break;  // Zeros exceeded, try next subarray
             }
         }
         return maxlen;
