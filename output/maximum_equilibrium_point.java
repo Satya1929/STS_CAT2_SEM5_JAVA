@@ -7,12 +7,12 @@ public class maximum_equilibrium_point {
 
         // Outer loop to iterate through each element of the array
         for (int i = 0; i < n; i++) {
-            // Calculate leftsum total_sum (total_sum of elements from index 0 to i)
+            // Calculate leftsum total_sum (total_sum of elements from index 0 to i-1)
             int prefix_sum = arr[i];
             for (int j = 0; j < i; j++)
                 prefix_sum += arr[j];
 
-            // Calculate suffix total_sum (total_sum of elements from index i to n-1)
+            // Calculate suffix total_sum (total_sum of elements from index i+1 to n-1)
             int suffix_sum = arr[i];
             for (int j = n - 1; j > i; j--)
                 suffix_sum += arr[j];
